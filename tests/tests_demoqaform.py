@@ -15,7 +15,7 @@ def test_student_registration_form():
     browser.element('.react-datepicker__year-select').click()
     browser.element('[value="2000"]').click()
     browser.element('.react-datepicker__day--002').click()
-    browser.element('#subjectsInput').type('Autotest')
+    browser.element('#subjectsInput').type('Chemistry').press_enter()
     browser.element('label[for="hobbies-checkbox-1"]').click()
     browser.element('label[for="hobbies-checkbox-2"]').click()
     browser.element('label[for="hobbies-checkbox-3"]').click()
@@ -36,7 +36,7 @@ def test_student_registration_form():
     browser.element('.table-responsive').should(have.text('Male'))
     browser.element('.table-responsive').should(have.text('9881234567'))
     browser.element('.table-responsive').should(have.text('02 October,2000'))
-    #browser.element('.table-responsive').should(have.text('Autotest')) на форме бага, введенное значение не сохраняется
+    browser.element('.table-responsive').should(have.text('Chemistry'))
     browser.element('.table-responsive').should(have.text('Sports, Reading, Music'))
     browser.element('.table-responsive').should(have.text('Ivan.jpg'))
     browser.element('.table-responsive').should(have.text('Mira str., 5'))
