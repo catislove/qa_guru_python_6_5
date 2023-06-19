@@ -8,7 +8,7 @@ def test_student_registration_form():
     browser.element('#lastName').type('Ivanov')
     browser.element('#userEmail').type('Ivan@example.com')
     browser.element('label[for="gender-radio-1"]').click()
-    browser.element('#userNumber').type('89881234567')
+    browser.element('#userNumber').type('9881234567')
     browser.element('#dateOfBirthInput').click()
     browser.element('.react-datepicker__month-select').click()
     browser.element('[value="9"]').click()
@@ -30,3 +30,14 @@ def test_student_registration_form():
     browser.element('#submit').click().press_enter()
 
     browser.element('#example-modal-sizes-title-lg').should(have.text('Thanks for submitting the form'))
+    browser.element('.table-responsive').should(have.text('Ivan'))
+    browser.element('.table-responsive').should(have.text('Ivanov'))
+    browser.element('.table-responsive').should(have.text('Ivan@example.com'))
+    browser.element('.table-responsive').should(have.text('Male'))
+    browser.element('.table-responsive').should(have.text('9881234567'))
+    browser.element('.table-responsive').should(have.text('02 October,2000'))
+    #browser.element('.table-responsive').should(have.text('Autotest')) на форме бага, введенное значение не сохраняется
+    browser.element('.table-responsive').should(have.text('Sports, Reading, Music'))
+    browser.element('.table-responsive').should(have.text('Ivan.jpg'))
+    browser.element('.table-responsive').should(have.text('Mira str., 5'))
+    browser.element('.table-responsive').should(have.text('NCR Delhi'))
